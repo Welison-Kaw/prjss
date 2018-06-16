@@ -4,16 +4,15 @@
     try {
 
         $dispositivo = new Dispositivo($id);
-        $dispositivo->id = $_POST['id'];
         $dispositivo->hostname = $_POST['hostname'];
         $dispositivo->ip = $_POST['ip'];
         $dispositivo->tipo_id = $_POST['tipo_id'];
         $dispositivo->fabricante = $_POST['fabricante'];
 
-        $_SESSION['type'] = 'update';
-        $_SESSION['message'] = "Dipositivo <strong>$dispositivo->hostname</strong> alterado com sucesso!";
+        $_SESSION['type'] = 'insert';
+        $_SESSION['message'] = "Dipositivo <strong>$dispositivo->hostname</strong> inserido com sucesso!";
         
-        $dispositivo->update();
+        $dispositivo->insert();
 
         header('Location: dispositivos.php');
 

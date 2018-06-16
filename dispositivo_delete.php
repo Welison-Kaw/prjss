@@ -13,5 +13,5 @@
         header('Location: dispositivos.php');
 
     } catch (Exception $e) {
-        Erro::trataErro($e);
+        echo $e->getMessage();
     }

@@ -56,8 +56,33 @@ class Dispositivo {
 		$this->fabricante = $row['fabricante'];
 	}
 
-	public function update() {
+	public function insert() {
+		$query = "INSERT INTO DISPOSITIVO (hostname, ip, tipo_id, fabricante) 
+					VALUES (:hostname, inet_aton(:ip), :tipo_id, :fabricante) ";
+		$conn = Conn::getConn();
+		$stmt = $conn->prepare($query);
+		$stmt->bindValue(':hostname',$this->hostname);
+		$stmt->bindValue(':ip',$this->ip);
+		$stmt->bindValue(':tipo_id',$this->tipo_id);
+		$stmt->bindValue(':fabricante',$this->fabricante);
+		$stmt->execute();
+	}
 
+	public function update() {
+		$query = "UPDATE DISPOSITIVO SET
+					hostname = :hostname,
+					ip = inet_aton(:ip),
+					tipo_id = :tipo_id,
+					fabricante = :fabricante
+				WHERE id = :id";
+		$conn = Conn::getConn();
+		$stmt = $conn->prepare($query);
+		$stmt->bindValue(':id',$this->id);
+		$stmt->bindValue(':hostname',$this->hostname);
+		$stmt->bindValue(':ip',$this->ip);
+		$stmt->bindValue(':tipo_id',$this->tipo_id);
+		$stmt->bindValue(':fabricante',$this->fabricante);
+		$stmt->execute();
 	}
 
 	public function delete() {
@@ -66,6 +91,5 @@ class Dispositivo {
 		$stmt = $conn->prepare($query);
 		$stmt->bindValue(':id', $this->id);
 		$stmt->execute();
-		//echo $query;
 	}
 }

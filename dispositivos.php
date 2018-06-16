@@ -3,7 +3,7 @@
 	try {
 		$list = Dispositivo::select();
 	} catch (Exception $e) {
-		echo "<h1>$e</h1>";
+		echo $e->getMessage();
 	}
 ?>
 
@@ -13,7 +13,7 @@
 	<div class="alert alert-success alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><?= $_SESSION['message'] ?></div>
 	<?php elseif ($_SESSION['type'] == 'delete'): ?>
 	<div class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><?= $_SESSION['message'] ?></div>
-	<?php elseif ($_SESSION['type'] == 'delete'): ?>
+	<?php elseif ($_SESSION['type'] == 'update'): ?>
 	<div class="alert alert-primary alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><?= $_SESSION['message'] ?></div>
 	<?php endif ?>
 	<div class="row justify-content-end">
@@ -21,7 +21,7 @@
 			<h2>Listagem de Dispositivos</h2>
 		</div>
 		<div class="col-sm-2">
-			<button type="button" class="btn btn-success btn-block">Inserir</button>
+			<a href="/dispositivo_form.php" class="btn btn-success btn-block">Inserir</a>
 		</div>
 		<div class="col-sm-2">
 			<a href="/dispositivos.php" class="btn btn-primary btn-block">Atualizar</a>
@@ -42,7 +42,7 @@
 			<?php if (count($list) > 0): ?>
 				<?php foreach ($list as $row): ?>
 					<tr>
-						<td><a href="/dispositivo_update.php?id=<?= $row['id'] ?>"><button class="btn btn-primary">Alterar</button></a></td>
+						<td><a href="/dispositivo_form.php?id=<?= $row['id'] ?>"><button class="btn btn-primary">Alterar</button></a></td>
 						<td><a href="/dispositivo_delete.php?id=<?= $row['id'] ?>"><button class="btn btn-danger">Excluir</button></a></td>
 						<td><?= $row['hostname'] ?></td>
 						<td><?= $row['ip'] ?></td>

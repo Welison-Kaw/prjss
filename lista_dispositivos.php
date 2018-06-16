@@ -1,9 +1,7 @@
 <?php require_once 'global.php' ?>
 <?php
 	try {
-		$dispositivo = new Dispositivo();
-		$list = $dispositivo->select();
-		//$list = Dipositivo::select();
+		$list = Dispositivo::select();
 	} catch (Exception $e) {
 		echo "<h1>$e</h1>";
 	}
@@ -37,13 +35,14 @@
 			</tr>
 		</thead>
 		<tbody>
+			<?php ?>
 			<?php foreach ($list as $row): ?>
 				<tr>
 					<td><a href="/edita_dispositivo.php?id=<?= $row['id'] ?>"><button class="btn btn-primary">Alterar</button></a></td>
 					<td><a href="#"><button class="btn btn-danger">Excluir</button></a></td>
 					<td><?= $row['hostname'] ?></td>
 					<td><?= $row['ip'] ?></td>
-					<td><?= $row['tipo'] ?></td>
+					<td><?= $row['tipo_nome'] ?></td>
 					<td><?= $row['fabricante'] ?></td>
 				</tr>
 			<?php endforeach ?>

@@ -1,4 +1,14 @@
-<?php require_once 'cabecalho.php'; ?>
+<?php require_once 'global.php' ?>
+<?php
+	try {
+		$dispositivo = new Dispositivo();
+		$list = $dispositivo->listar();
+	} catch (Exception $e) {
+		echo "<h1>$e</h1>";
+	}
+?>
+
+<?php require_once 'cabecalho.php' ?>
 
 	<div class="alert alert-success">Inserido com sucesso!</div>
 	<div class="alert alert-danger">Excluído com sucesso!</div>
@@ -52,5 +62,5 @@
 			</tr>
 		</tbody>
 	</table>
-	
+
 <?php require_once 'rodape.php'; ?>

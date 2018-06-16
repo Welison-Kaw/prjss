@@ -1,4 +1,10 @@
-<?php require_once("cabecalho.php"); ?>
+<?php require_once 'cabecalho.php'; ?>
+
+	<div class="row">
+		<div class="col-sm-6">
+			<h2>Ediçao de Dispositivo</h2>
+		</div>
+	</div>
 	<form method="post">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
@@ -18,9 +24,14 @@
 					<label for="fabricante">Fabricante</label>
 					<input name="fabricante" class="form-control" id="fabricante" placeholder="Nome do fabricante" type="text">
 				</div>
-				<input type="submit" class="btn btn-success btn-block" value="Salvar">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6"><input type="submit" class="btn btn-success btn-block" value="Salvar"></div>
+						<div class="col-md-6"><a href="/lista_dispositivos.php" class="btn btn-danger btn-block">Cancelar</a></div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</form>
 
-<?php require_once("rodape.php"); ?>
+<?php require_once 'rodape.php'; ?>

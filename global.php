@@ -1,6 +1,7 @@
 <?php
 
 require_once 'classes/config.php';
+session_start();
 
 spl_autoload_register('loadClass');
 

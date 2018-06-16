@@ -55,4 +55,17 @@ class Dispositivo {
 		$this->tipo_id = $row['tipo_id'];
 		$this->fabricante = $row['fabricante'];
 	}
+
+	public function update() {
+
+	}
+
+	public function delete() {
+		$query = "DELETE FROM DISPOSITIVO WHERE id = :id";
+		$conn = Conn::getConn();
+		$stmt = $conn->prepare($query);
+		$stmt->bindValue(':id', $this->id);
+		$stmt->execute();
+		//echo $query;
+	}
 }

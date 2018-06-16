@@ -27,7 +27,19 @@ class Tipo {
 	}
 
 	public function load() {
+		$query = "SELECT 
+					id as id,
+					nome as nome
+				FROM TIPO
+				WHERE id = :id";
 
+		$conn = Conn::getConn();
+		$stmt = $conn->prepare($query);
+		$stmt->bindValue(':id', $this->id);
+		$stmt->execute();
+
+		$row = $stmt->fetch();
+		$this->nome = $row['nome'];
 	}
 }
 

@@ -44,7 +44,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6"><input type="submit" class="btn btn-success btn-block" value="Salvar"></div>
-						<div class="col-md-6"><a href="/lista_dispositivos.php" class="btn btn-danger btn-block">Cancelar</a></div>
+						<div class="col-md-6"><a href="/dispositivos.php" class="btn btn-danger btn-block">Cancelar</a></div>
 					</div>
 				</div>
 			</div>

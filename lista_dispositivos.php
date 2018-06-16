@@ -36,24 +36,24 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td><span class="fa fa-trash"></span></td>
-					<td><span class="fa fa-edit"></span></td>
+					<td><a href="#"><span class="fa fa-trash"></span></a></td>
+					<td><a href="#"><span class="fa fa-edit"></span></a></td>
 					<td>Hostname 1</td>
 					<td>IP 1</td>
 					<td>Tipo 1</td>
 					<td>Fabricante 1</td>
 				</tr>
 				<tr>
-					<td><span class="fa fa-trash"></span></td>
-					<td><span class="fa fa-edit"></span></td>
+					<td><a href="#"><span class="fa fa-trash"></span></a></td>
+					<td><a href="#"><span class="fa fa-edit"></span></a></td>
 					<td>Hostname 2</td>
 					<td>IP 2</td>
 					<td>Tipo 2</td>
 					<td>Fabricante 2</td>
 				</tr>
 				<tr>
-					<td><span class="fa fa-trash"></span></td>
-					<td><span class="fa fa-edit"></span></td>
+					<td><a href="#"><span class="fa fa-trash"></span></a></td>
+					<td><a href="#"><span class="fa fa-edit"></span></a></td>
 					<td>Hostname 3</td>
 					<td>IP 3</td>
 					<td>Tipo 3</td>

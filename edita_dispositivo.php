@@ -1,4 +1,14 @@
-<?php require_once 'cabecalho.php'; ?>
+<?php require_once 'global.php' ?>
+<?php
+	try {
+		$id = _GET['id'];
+		$dispositivo = new Dispositivo($id);
+	} catch (Exception $e) {
+		echo "<h1>$e</h1>";
+	}
+?>
+
+<?php require_once 'cabecalho.php' ?>
 
 	<div class="row">
 		<div class="col-sm-6">
@@ -10,7 +20,7 @@
 			<div class="col-md-6 col-md-offset-3">
 				<div class="form-group">
 					<label for="hostname">Hostname</label>
-					<input name="hostname" class="form-control" id="hostname" placeholder="" type="text">
+					<input name="hostname" class="form-control" id="hostname" placeholder="" type="text" value=<?= $dispositivo->hostname ?>>
 				</div>
 				<div class="form-group">
 					<label for="ip">IP</label>
@@ -34,4 +44,4 @@
 		</div>
 	</form>
 
-<?php require_once 'rodape.php'; ?>
+<?php require_once 'rodape.php' ?>

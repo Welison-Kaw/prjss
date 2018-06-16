@@ -2,11 +2,11 @@
 
 require_once 'classes/config.php';
 
-spl_autoload_register('carregarClasse');
+spl_autoload_register('loadClass');
 
-function carregarClasse($nomeClasse)
+function loadClass($className)
 {
-    if (file_exists('classes/' . $nomeClasse . '.php')) {
-        require_once 'classes/' .$nomeClasse . '.php';
+    if (file_exists('classes/' . $className . '.php')) {
+        require_once 'classes/' .$className . '.php';
     }
 }

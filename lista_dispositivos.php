@@ -2,7 +2,8 @@
 <?php
 	try {
 		$dispositivo = new Dispositivo();
-		$list = $dispositivo->listar();
+		$list = $dispositivo->select();
+		//$list = Dipositivo::select();
 	} catch (Exception $e) {
 		echo "<h1>$e</h1>";
 	}
@@ -36,30 +37,16 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td><a href="/edita_dispositivo.php"><button class="btn btn-primary">Alterar</button></a></td>
-				<td><a href="#"><button class="btn btn-danger">Excluir</button></a></td>
-				<td>Hostname 1</td>
-				<td>IP 1</td>
-				<td>Tipo 1</td>
-				<td>Fabricante 1</td>
-			</tr>
-			<tr>
-				<td><a href="/edita_dispositivo.php"><button class="btn btn-primary">Alterar</button></a></td>
-				<td><a href="#"><button class="btn btn-danger">Excluir</button></a></td>
-				<td>Hostname 2</td>
-				<td>IP 2</td>
-				<td>Tipo 2</td>
-				<td>Fabricante 2</td>
-			</tr>
-			<tr>
-				<td><a href="/edita_dispositivo.php"><button class="btn btn-primary">Alterar</button></a></td>
-				<td><a href="#"><button class="btn btn-danger">Excluir</button></a></td>
-				<td>Hostname 3</td>
-				<td>IP 3</td>
-				<td>Tipo 3</td>
-				<td>Fabricante 3</td>
-			</tr>
+			<?php foreach ($list as $row): ?>
+				<tr>
+					<td><a href="/edita_dispositivo.php?id=<?= $row['id'] ?>"><button class="btn btn-primary">Alterar</button></a></td>
+					<td><a href="#"><button class="btn btn-danger">Excluir</button></a></td>
+					<td><?= $row['hostname'] ?></td>
+					<td><?= $row['ip'] ?></td>
+					<td><?= $row['tipo'] ?></td>
+					<td><?= $row['fabricante'] ?></td>
+				</tr>
+			<?php endforeach ?>
 		</tbody>
 	</table>
 

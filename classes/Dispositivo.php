@@ -34,6 +34,15 @@ class Dispositivo {
 		return $ds;
 	}
 
+	public static function selectTipo($tipo_id) {
+		$query = "SELECT id, hostname, ip, fabricante from DISPOSITIVO WHERE tipo_id = :tipo_id";
+		$conn = Conn::getConn();
+		$stmt = $conn->prepare($query);
+		$stmt->bindValue(':tipo_id', $tipo_id);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+
 	public function load() {
 		$query = "SELECT 
 					id as id,

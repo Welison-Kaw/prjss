@@ -16,8 +16,8 @@
 	    <div class="container">
 	        <div id="navbar2" class="collapse navbar-collapse">
 	            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-	                <li class="nav-item active"><a class="nav-link" href="/dispositivos.php">Dispositivos</a></li>
-	                <li class="nav-item"><a class="nav-link" href="#">Tipos</a></li>
+	                <li class="nav-item"><a class="nav-link" href="/dispositivos.php">Dispositivos</a></li>
+	                <li class="nav-item"><a class="nav-link" href="/tipos.php">Tipos</a></li>
 	            </ul>
 	        </div>
 	    </div>

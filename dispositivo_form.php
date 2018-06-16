@@ -28,15 +28,15 @@
 			<div class="col-md-6 col-md-offset-3">
 				<div class="form-group">
 					<label for="hostname">Hostname</label>
-					<input name="hostname" class="form-control" id="hostname" placeholder="" type="text" value="<?= $dispositivo->hostname ?>">
+					<input name="hostname" class="form-control" id="hostname" placeholder="" type="text" value="<?= $dispositivo->hostname ?>" required>
 				</div>
 				<div class="form-group">
 					<label for="ip">IP</label>
-					<input name="ip" class="form-control" id="ip" placeholder="xxx.xxx.xxx.xxx" type="text" value="<?= $dispositivo->ip ?>">
+					<input name="ip" class="form-control" id="ip" placeholder="xxx.xxx.xxx.xxx" type="text" value="<?= $dispositivo->ip ?>" required pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}">
 				</div>
 				<div class="form-group">
 					<label for="tipo">Tipo</label>
-					<select class="form-control" name="tipo_id">
+					<select class="form-control" name="tipo_id" required>
 						<option value=""></option>
 						<?php foreach ($tipo as $row): ?>
 							<?php $selected = ($row['id'] == $dispositivo->tipo_id) ? 'selected=selected' : ''; ?>
@@ -46,7 +46,7 @@
 				</div>
 				<div class="form-group">
 					<label for="fabricante">Fabricante</label>
-					<input name="fabricante" class="form-control" id="fabricante" placeholder="Nome do fabricante" type="text" value="<?= $dispositivo->fabricante ?>">
+					<input name="fabricante" class="form-control" id="fabricante" placeholder="Nome do fabricante" type="text" value="<?= $dispositivo->fabricante ?>" required>
 				</div>
 				<div class="container">
 					<div class="row">

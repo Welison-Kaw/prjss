@@ -47,7 +47,7 @@
 					</tr>
 				<?php endforeach ?>
 			<?php else: ?>
-				<tr><td colspan="6" class="text-center">Nenhum tipo cadastrado</td></tr>
+				<tr><td colspan="3" class="text-center">Nenhum tipo cadastrado</td></tr>
 			<?php endif ?>
 		</tbody>
 	</table>

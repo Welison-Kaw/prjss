@@ -20,7 +20,7 @@
 	<?php endif ?>
 	<div class="row justify-content-end">
 		<div class="col-sm-8">
-			<h2>Listagem de Dispositivos</h2>
+			<h2>Listagem de Tipos</h2>
 		</div>
 		<div class="col-sm-2">
 			<a href="/tipo_form.php" class="btn btn-success btn-block">Inserir</a>

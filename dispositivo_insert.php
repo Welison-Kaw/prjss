@@ -3,7 +3,7 @@
 
     try {
 
-        $dispositivo = new Dispositivo($id);
+        $dispositivo = new Dispositivo();
         $dispositivo->hostname = $_POST['hostname'];
         $dispositivo->ip = $_POST['ip'];
         $dispositivo->tipo_id = $_POST['tipo_id'];

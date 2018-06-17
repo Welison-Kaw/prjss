@@ -15,7 +15,7 @@
 			<h2>Autenticar Acesso</h2>
 		</div>
 	</div>
-	<form method="post" action="<?= $action ?>">
+	<form method="post" action="dispositivo_cmd.php">
 		<input type="hidden" name="id" value="<?= $dispositivo->getId() ?>">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">

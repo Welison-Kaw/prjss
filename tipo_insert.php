@@ -4,10 +4,10 @@
     try {
 
         $tipo = new Tipo();
-        $tipo->nome = $_POST['nome'];
+        $tipo->setNome($_POST['nome']);
 
         $_SESSION['type'] = 'insert';
-        $_SESSION['message'] = "Tipo <strong>$tipo->nome</strong> inserido com sucesso!";
+        $_SESSION['message'] = "Tipo <strong>".$tipo->getNome()."</strong> inserido com sucesso!";
 
         $tipo->insert();
 

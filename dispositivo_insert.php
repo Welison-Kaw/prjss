@@ -4,13 +4,13 @@
     try {
 
         $dispositivo = new Dispositivo();
-        $dispositivo->hostname = $_POST['hostname'];
-        $dispositivo->ip = $_POST['ip'];
-        $dispositivo->tipo_id = $_POST['tipo_id'];
-        $dispositivo->fabricante = $_POST['fabricante'];
+        $dispositivo->setHostname($_POST['hostname']);
+        $dispositivo->setIp($_POST['ip']);
+        $dispositivo->setTipo_id($_POST['tipo_id']);
+        $dispositivo->setFabricante($_POST['fabricante']);
 
         $_SESSION['type'] = 'insert';
-        $_SESSION['message'] = "Dipositivo <strong>$dispositivo->hostname</strong> inserido com sucesso!";
+        $_SESSION['message'] = "Dipositivo <strong>" . $dispositivo->getHostname . "</strong> inserido com sucesso!";
         
         $dispositivo->insert();
 

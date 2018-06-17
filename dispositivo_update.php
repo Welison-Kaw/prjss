@@ -4,14 +4,14 @@
     try {
 
         $dispositivo = new Dispositivo($id);
-        $dispositivo->id = $_POST['id'];
-        $dispositivo->hostname = $_POST['hostname'];
-        $dispositivo->ip = $_POST['ip'];
-        $dispositivo->tipo_id = $_POST['tipo_id'];
-        $dispositivo->fabricante = $_POST['fabricante'];
+        $dispositivo->setId($_POST['id']);
+        $dispositivo->setHostname($_POST['hostname']);
+        $dispositivo->setIp($_POST['ip']);
+        $dispositivo->setTipo_id($_POST['tipo_id']);
+        $dispositivo->setFabricante($_POST['fabricante']);
 
         $_SESSION['type'] = 'update';
-        $_SESSION['message'] = "Dipositivo <strong>$dispositivo->hostname</strong> alterado com sucesso!";
+        $_SESSION['message'] = "Dipositivo <strong>" . $dispositivo->getHostname() . "</strong> alterado com sucesso!";
         
         $dispositivo->update();
 

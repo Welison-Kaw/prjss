@@ -23,12 +23,12 @@
 		</div>
 	</div>
 	<form method="post" action="<?= $action ?>">
-		<input type="hidden" name="id" value="<?= $tipo->id ?>">
+		<input type="hidden" name="id" value="<?= $tipo->getId() ?>">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="form-group">
 					<label for="nome">Nome</label>
-					<input name="nome" class="form-control" id="nome" placeholder="" type="text" value="<?= $tipo->nome ?>" required>
+					<input name="nome" class="form-control" id="nome" placeholder="" type="text" value="<?= $tipo->getNome() ?>" required>
 				</div>
 				<div class="container">
 					<div class="row">

@@ -32,6 +32,7 @@
 			<tr>
 				<th></th>
 				<th></th>
+				<th></th>
 				<th>Hostname</th>
 				<th>IP</th>
 				<th>Tipo</th>
@@ -44,6 +45,7 @@
 					<tr>
 						<td><a href="/dispositivo_form.php?id=<?= $row['id'] ?>"><button class="btn btn-primary">Alterar</button></a></td>
 						<td><a href="/dispositivo_delete.php?id=<?= $row['id'] ?>"><button class="btn btn-danger">Excluir</button></a></td>
+						<td><a href="/dispositivo_autenticar.php?id=<?= $row['id'] ?>"><button class="btn btn-success">Conectar</button></a></td>
 						<td><?= $row['hostname'] ?></td>
 						<td><?= $row['ip'] ?></td>
 						<td><?= $row['tipo_nome'] ?></td>

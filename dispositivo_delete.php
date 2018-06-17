@@ -6,7 +6,7 @@
         $dispositivo = new Dispositivo($id);
 
         $_SESSION['type'] = 'delete';
-        $_SESSION['message'] = "Dipositivo <strong>$dispositivo->hostname</strong> excluído com sucesso!";
+        $_SESSION['message'] = "Dipositivo <strong>" . $dispositivo->getHostname() . "</strong> excluído com sucesso!";
 
         $dispositivo->delete();
 

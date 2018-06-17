@@ -3,15 +3,34 @@
 require_once 'classes/Conexao.php';
 
 class Tipo {
-	public $id;
-	public $nome;
-	public $dispositivos;
+	private $id;
+	private $nome;
 
 	public function __construct($id = false) {
 		if ($id) {
 			$this->id = $id;
 			$this->load();
 		}
+	}
+
+	public function getId() {
+		return $this->id;
+	}
+
+	public function setId($value) {
+		$this->id = $value;
+	}
+
+	public function getNome() {
+		return $this->nome;
+	}
+
+	public function setNome($value) {
+		$this->nome = $value;
+	}
+
+	public function getDispositivos() {
+		return Dispositivo::selectTipo($this->id);
 	}
 
 	public static function select() {
@@ -66,10 +85,6 @@ class Tipo {
 		$stmt = $conn->prepare($query);
 		$stmt->bindValue(':id', $this->id);
 		$stmt->execute();
-	}
-
-	public function selectDispositivos() {
-		$this->dispositivos = Dispositivo::selectTipo($this->id);
 	}
 }
 

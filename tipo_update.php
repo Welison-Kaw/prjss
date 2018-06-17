@@ -4,11 +4,11 @@
     try {
 
         $tipo = new Tipo($id);
-        $tipo->id = $_POST['id'];
-        $tipo->nome = $_POST['nome'];
+        $tipo->setId($_POST['id']);
+        $tipo->setNome($_POST['nome']);
 
         $_SESSION['type'] = 'update';
-        $_SESSION['message'] = "Tipo <strong>$tipo->nome</strong> alterado com sucesso!";
+        $_SESSION['message'] = "Tipo <strong>".$tipo->getNome()."</strong> alterado com sucesso!";
         
         $tipo->update();
 

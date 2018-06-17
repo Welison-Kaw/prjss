@@ -3,11 +3,51 @@
 require_once 'classes/Conexao.php';
 
 class Dispositivo {
-	public $id;
-	public $hostname;
-	public $ip;
-	public $tipo_id;
-	public $fabricante;
+	private $id;
+	private $hostname;
+	private $ip;
+	private $tipo_id;
+	private $fabricante;
+
+	public function getId() {
+		return $this->id;
+	}
+
+	public function setId($value) {
+		$this->id = $value;
+	}
+
+	public function getHostname() {
+		return $this->hostname;
+	}
+
+	public function setHostname($value) {
+		$this->hostname = $value;
+	}
+
+	public function getIp() {
+		return $this->ip;
+	}
+
+	public function setIp($value) {
+		$this->ip = $value;
+	}
+
+	public function getTipo_id() {
+		return $this->tipo_id;
+	}
+
+	public function setTipo_id($value) {
+		$this->tipo_id = $value;
+	}
+
+	public function getFabricante() {
+		return $this->fabricante;
+	}
+
+	public function setFabricante($value) {
+		$this->fabricante = $value;
+	}
 
 	public function __construct($id = false) {
 		if ($id) {

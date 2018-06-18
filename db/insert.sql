@@ -1,4 +1,4 @@
-SOURCE /home/kaw/dev/mt4/db/db.sql;
+SOURCE /home/kaw/dev/mt4/db/create.sql;
 
 SET FOREIGN_KEY_CHECKS = 0; 
 TRUNCATE TABLE DISPOSITIVO; 

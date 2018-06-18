@@ -18,6 +18,8 @@
 	            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 	                <li class="nav-item"><a class="nav-link" href="/dispositivos.php">Dispositivos</a></li>
 	                <li class="nav-item"><a class="nav-link" href="/tipos.php">Tipos</a></li>
+	                <li class="nav-item"><a class="nav-link" href="/criptografar.php">Criptografar</a></li>
+	                <li class="nav-item"><a class="nav-link" href="/hashes.php">Hashes</a></li>
 	            </ul>
 	        </div>
 	    </div>

@@ -8,7 +8,7 @@
 
 <?php require_once 'cabecalho.php' ?>
 
-<form class="form" method="post">
+<form method="post">
 	<input type="hidden" name="usuario" value="<?= $user ?>">
 	<input type="hidden" name="senha" value="<?= $pass ?>">
 	<input type="hidden" name="ip" value="<?= $ip ?>">
@@ -20,12 +20,7 @@
 </form>
 <pre class="text-white bg-dark p-3">
 <?php
-	/*$user = "kaw";
-	$pass = "welison01";
-	$ip = "192.168.0.12";*/
-
 	$ssh = new AcessoSSH();
-	//echo "connect <br />";
 
 	$ssh->connect($ip);
 	if ($ssh->login($user, $pass)) {
@@ -34,15 +29,6 @@
 			echo $comando . "<br />";
 			echo $ssh->exec($comando);
 		}
-		/*echo "<hr>Foi</hr>";
-		$ssh->exec('pwd');
-		echo "<hr>" . $ssh->lastResult();
-		$ssh->exec('cd /home');
-		echo "<hr>" . $ssh->lastResult();
-		$ssh->exec('pwd');
-		echo "<hr>" . $ssh->lastResult();
-		$ssh->exec('ls -l');
-		echo "<hr>" . $ssh->lastResult();*/
 	} else {
 		die('Falha de autenticaçao');
 	}

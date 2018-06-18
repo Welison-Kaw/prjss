@@ -22,10 +22,6 @@ class AcessoSSH {
 		$stream_out = ssh2_fetch_stream($stream, SSH2_STREAM_STDIO);
 		return str_replace("\n", "<br />", stream_get_contents($stream_out));
 	}
-
-	public function lastResult() {
-		return $this->result;
-	}
 }
 
 ?>

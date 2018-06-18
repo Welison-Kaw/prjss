@@ -9,9 +9,13 @@
 		$comparacao = $_POST['comparacao'];
 		$sha512 = crypt($texto, '$6$rounds=5000$palimpsest$');
 		$hmac = hash_hmac('sha256', $texto, 'kryptos');
+		$salt = "Z3OMUWQg2C9dyN0wRpws";
+		$blowfish = crypt($texto, '$2a$07$'.$salt.'$');
+
 		if ($comparacao) {
-			$compara[0] = ($comparacao == $sha512);
-			$compara[1] = ($comparacao == $hmac);
+			$compara[0] = array("SHA512", ($comparacao === $sha512));
+			$compara[1] = array("HMAC", ($comparacao === $hmac));
+			$compara[2] = array("Blowfish", ($comparacao === $blowfish));
 		}
 	}
 ?>
@@ -41,6 +45,10 @@
 			<label>HMAC</label>
 			<textarea rows="3" class="form-control" readonly><?= $hmac ?></textarea>
 		</div>
+		<div class="form-group">
+			<label>Blowfish</label>
+			<textarea rows="3" class="form-control" readonly><?= $blowfish ?></textarea>
+		</div>
 	</div>
 	<div class="col-md-4">
 		<label>Comparação</label>
@@ -53,14 +61,12 @@
 			</thead>
 			<?php if ($compara): ?>
 				<tbody>
-					<tr <?= ($compara[0]) ? 'class="table-success"' : "" ?>>
-						<td>SHA512</td>
-						<td><?= ($compara[0]) ? 'Igual' : 'Diferente' ?></td>
-					</tr>
-					<tr <?= ($compara[1]) ? 'class="table-success"' : "" ?>>
-						<td>HMAC</td>
-						<td><?= ($compara[1]) ? 'Igual' : 'Diferente' ?></td>
-					</tr>
+					<?php foreach ($compara as $item): ?>
+						<tr <?= ($item[1]) ? 'class="table-success"' : "" ?>>
+							<td><?= $item[0] ?></td>
+							<td><?= ($item[1]) ? 'Igual' : 'Diferente' ?></td>
+						</tr>
+					<?php endforeach ?>
 				</tbody>
 			<?php endif ?>
 		</table>
